@@ -33,17 +33,19 @@ export default function MoviesDetails({ locations }) {
 
   return (
     <>
-      <Link to={backLinkHref}>Back to products</Link>
-      <CardMovie moviesDetails={movies} />
+      <Link to={backLinkHref}>
+        <h2>Back to Movies</h2>
+      </Link>
+      {movies && <CardMovie moviesDetails={movies} />}
       <ul>
         <li>
           <Link to="cast" state={{ from: location.state.from }}>
-            Cast
+            <h3>Cast</h3>
           </Link>
         </li>
         <li>
           <Link to="reviews" state={{ from: location.state.from }}>
-            Reviews
+            <h3>Reviews</h3>
           </Link>
         </li>
       </ul>

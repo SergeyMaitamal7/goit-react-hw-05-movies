@@ -4,10 +4,12 @@ import { searchMovie } from 'api/Api';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Loader } from 'components/Loader/Loader';
 
 export default function Movies() {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [isLoading, setIsLoading] = useState(false);
   const movieName = searchParams.get('query') ?? '';
 
   useEffect(() => {
@@ -15,9 +17,9 @@ export default function Movies() {
       if (movieName === '') {
         return;
       }
+      setIsLoading(true);
       try {
         const { results } = await searchMovie(movieName);
-        console.log(results);
         if (results.length !== 0) {
           setMovies(results);
         } else {
@@ -25,20 +27,22 @@ export default function Movies() {
         }
       } catch (error) {
         console.log(error.message);
+      } finally {
+        setIsLoading(false);
       }
     };
     doFetch();
   }, [movieName]);
 
   const handleFormSubmit = query => {
-    console.log(query);
     setSearchParams({ query: query });
   };
 
   return (
     <>
       <SearchBar onSubmit={handleFormSubmit} />
-      <MoviesList movies={movies} />
+      {isLoading && <Loader />}
+      {movies && <MoviesList movies={movies} />}
     </>
   );
 }

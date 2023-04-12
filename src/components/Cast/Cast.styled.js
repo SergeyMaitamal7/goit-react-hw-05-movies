@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
-export const CardWrapper = styled.div`
-  border: 1px solid black;
-  border-radius: 4px;
-
-  > a {
-    text-decoration: none;
-  }
+export const CardWrapper = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 106px);
+  gap: 16px;
+  list-style-type: none;
+`;
+export const CardMovie = styled.li`
+  padding: 5px;
 `;
 export const Image = styled.img``;
-
 export const Name = styled.h3`
   padding: 4px;
   margin-top: 8px;

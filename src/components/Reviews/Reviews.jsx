@@ -9,8 +9,8 @@ export default function Reviews() {
   useEffect(() => {
     const doFetch = async () => {
       try {
-        const actors = await reviewMovies(movieId);
-        setReviewMovie(actors.results);
+        const {results} = await reviewMovies(movieId);
+        setReviewMovie(results);
       } catch (error) {
         console.log(error.message);
       }

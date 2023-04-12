@@ -1,15 +1,10 @@
 import styled from 'styled-components';
 
-export const CardWrapper = styled.div`
-  border: 1px solid black;
-  border-radius: 4px;
-
-  > a {
-    text-decoration: none;
-  }
+export const CardWrapper = styled.ul`
+  text-decoration: none;
 `;
 
-export const CardDetails= styled.p`
+export const CardDetails = styled.p`
   padding: 4px;
   margin-top: 8px;
   margin-bottom: 0;

@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 280px);
+  gap: 16px;
+  list-style-type: none;
+  text-decoration: none;
 `;
 
 export const CardWrapper = styled.div`
-  border: 1px solid black;
-  border-radius: 4px;
-
-  > a {
-    text-decoration: none;
-  }
+  position: relative;
+  transition: 0.5s linear;
+  border-radius: 8px;
+  cursor: pointer;
 `;
 
 export const MoviesName = styled.h3`
@@ -20,4 +21,11 @@ export const MoviesName = styled.h3`
   margin-bottom: 0;
   color: black;
 `;
-export const Image = styled.img``;
+
+export const Image = styled.img`
+  display: block;
+  width: 280px;
+  height: 360px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+`;
