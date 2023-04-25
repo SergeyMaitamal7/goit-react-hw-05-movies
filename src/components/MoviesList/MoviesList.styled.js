@@ -6,6 +6,7 @@ export const Container = styled.div`
   gap: 16px;
   list-style-type: none;
   text-decoration: none;
+  padding-bottom: 10px;
 `;
 
 export const CardWrapper = styled.div`
