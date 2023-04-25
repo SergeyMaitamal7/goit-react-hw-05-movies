@@ -1,12 +1,15 @@
-import { CardWrapper, CardDetails, Image } from './CardMovie.styled';
+import { CardWrapper,DetailsWrapper, CardDetails, Image } from './CardMovie.styled';
 import NoPoster from '../../images/No_poster _image.jpg';
+import PropTypes from 'prop-types';
 
 export default function CardMovie({ moviesDetails }) {
   const { title, genres, release_date, overview, vote_average, poster_path } =
     moviesDetails;
+
   const genresMovie = genres.map(genre => genre.name + ' , ');
   const dateMovie = release_date.slice(0, 4);
   const score = vote_average.toFixed(1);
+
   return (
     <>
       <CardWrapper>
@@ -18,15 +21,31 @@ export default function CardMovie({ moviesDetails }) {
           }
           alt={title || 'No poster'}
         />
-        <h2>
-          {title} : <span>{dateMovie ? dateMovie : ''}</span>
-        </h2>
-        <CardDetails>User score: {score ? score : ''}</CardDetails>
-        <h2>Overview</h2>
-        <CardDetails> {overview}</CardDetails>
-        <h2>Genres</h2>
-        <CardDetails> {genresMovie}</CardDetails>
+
+        <DetailsWrapper>
+          <h2>
+            {title} : <span>{dateMovie ? `${dateMovie}` : ''}</span>
+          </h2>
+          <CardDetails>User score: {score ? score : ''}</CardDetails>
+          <h2>Overview</h2>
+          <CardDetails> {overview}</CardDetails>
+          <h2>Genres</h2>
+          <CardDetails> {genresMovie}</CardDetails>
+        </DetailsWrapper>
       </CardWrapper>
     </>
   );
 }
+
+CardMovie.prototype = {
+  movieDetails: PropTypes.objectOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      genres: PropTypes.object,
+      release_date: PropTypes.string,
+      overview: PropTypes.string,
+      vote_average: PropTypes.string,
+      poster_path: PropTypes.string,
+    })
+  ),
+};

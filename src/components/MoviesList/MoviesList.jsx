@@ -1,9 +1,12 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Container, CardWrapper, MoviesName, Image } from './MoviesList.styled';
+import PropTypes from 'prop-types';
 import NoPoster from '../../images/No_poster _image.jpg';
 
 export default function MoviesList({ movies }) {
   const location = useLocation();
+
+  console.log(movies);
   return (
     <Container>
       {movies.map(({ id, title, name, poster_path }) => (
@@ -24,3 +27,14 @@ export default function MoviesList({ movies }) {
     </Container>
   );
 }
+
+MoviesList.prototype = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+      name: PropTypes.string,
+      poster_path: PropTypes.string,
+    })
+  ),
+};

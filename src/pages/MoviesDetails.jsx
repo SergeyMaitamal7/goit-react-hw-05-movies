@@ -27,9 +27,7 @@ export default function MoviesDetails({ locations }) {
       }
     };
     doFetch();
-  }, [movieId]);
-
-  if (!movies) return;
+  }, [movies, movieId]);
 
   return (
     <>

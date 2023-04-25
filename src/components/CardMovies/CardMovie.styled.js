@@ -1,12 +1,18 @@
 import styled from 'styled-components';
 
 export const CardWrapper = styled.ul`
-  text-decoration: none;
+  display: flex;
+  padding: 0px;
+  width: 1080px;
+  margin: auto;
 `;
 
+export const DetailsWrapper = styled.div`
+  padding: 10px;
+`;
 export const CardDetails = styled.p`
-  padding: 4px;
-  margin-top: 8px;
+  padding: 5px;
+  margin-top: 10px;
   margin-bottom: 0;
   color: black;
 `;

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import { Container, Form, Button, Label, Input } from './Searchbar.styled';
 
-export  default function SearchBar ({ onSubmit }) {
+export default function SearchBar({ onSubmit }) {
   const [query, setQuery] = useState('');
 
   const handleSubmit = e => {
@@ -36,4 +36,4 @@ export  default function SearchBar ({ onSubmit }) {
       </Form>
     </Container>
   );
-};
+}
