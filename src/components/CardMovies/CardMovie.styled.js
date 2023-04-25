@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CardWrapper = styled.ul`
   display: flex;
   padding: 0px;
-  width: 1080px;
+  width: 1200px;
   margin: auto;
 `;
 

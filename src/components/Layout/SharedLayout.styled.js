@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 export const Container = styled.div`
   margin: auto;
-  width: 1080px;
+  width: 1200px;
   padding: 0 20px;
 `;
 

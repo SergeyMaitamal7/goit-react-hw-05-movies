@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 1120px;
   min-height: 64px;
   padding-right: 24px;
   padding-left: 24px;
@@ -64,5 +65,3 @@ export const Input = styled.input`
   padding-left: 4px;
   padding-right: 4px;
 `;
-
-
